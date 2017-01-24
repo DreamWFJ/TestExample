@@ -1,0 +1,228 @@
+功能介绍：
+    这是一个用户管理模块
+        实现用户的注册，登录 -- 不需要权限
+        获取token，注销，查询某个用户的信息，查询所有的用户信息（管理员），删除用户 -- 需要权限
+
+架构实现：
+    模块化，分层结构（数据库操作的，处理URL的，校验参数的，异常定义的）        
+
+
+测试方式介绍：
+    curl -i -u username -d '{"scopes":["public_repo"]}' https://api.github.com/authorizations
+    参数介绍：
+        -i 在输出中包括协议头
+        -u 服务的用户名和密码
+        -d HTTP POST数据
+        -X 指定用到的请求命令：POST GET DELETE HEAD PATCH PUT
+        -H 客户传递到服务的头信息
+
+格式介绍
+请求URL格式
+        GET /version/user/{user_id} -- show
+        PUT /version/user/{user_id} -- update
+        PATCH /version/user/{user_id} -- update
+        DELETE /version/user/{user_id} -- delete
+        GET /version/user -- list
+        POST /version/user -- create
+        POST /version/user -- bulk create
+
+    Verb	Description
+    HEAD	Can be issued against any resource to get just the HTTP header info.
+    GET	    Used for retrieving resources.
+    POST	Used for creating resources.
+    PATCH	Used for updating resources with partial JSON data. For instance, an Issue resource has title and body attributes. A PATCH request may accept one or more of the attributes to update the resource. PATCH is a relatively new and uncommon HTTP verb, so resource endpoints also accept POST requests.
+    PUT	    Used for replacing resources or collections. For PUT requests with no body attribute, be sure to set the Content-Length header to zero.
+    DELETE	Used for deleting resources.
+
+
+URL地址列举
+    GET /version/user/{user_id} 查看指定用户的信息用户
+        请求方式
+            curl -u "username" https://api.github.com/version/user/{user_id}
+            curl https://api.github.com/version/user/{user_id}?access_token=OAUTH-TOKEN
+            curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com/version/user/{user_id}
+
+    GET /version/user/ 查看所有用户的信息
+        0、请求方式示例
+            curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com/version/user/{user_id}?phone_number=asdfasdff&birthday=13&qq_number=1364654
+        1、请求方式中的权限如上
+        2、下面说说查询条件
+            模糊查询，输入关键字可以在用户的所有信息中进行匹配，返回分页条目 &page=10&per_page=50
+            基于以下条件的模糊查询：
+                "phone_number": phone_number,
+                "sex": sex,
+                "username": username,
+                "birthday": birthday,
+                "blood_type": blood_type,
+                "identity_card_number":identity_card_number,
+                "email_address":email_address,
+                "qq_number":qq_number,
+                "weixin_number":weixin_number,
+                "birth_place":birth_place,
+                "place_of_residence":place_of_residence,
+                "personal_profile":personal_profile,
+                "bodily_form":bodily_form,
+                "marital_status":marital_status,
+                "degree_of_education":degree_of_education,
+                "educational_background":educational_background,
+                "prefession":prefession,
+                "work_unit":work_unit,
+                "head_portrait":head_portrait,
+            返回格式
+              成功：
+                HTTP/1.1 200 OK
+                Content-Length: 520
+                {
+                    "total_count":120,
+                    "items":[
+                        {
+                            "sex": sex,
+                            "username": username,
+                            "birthday": birthday,
+                            ...
+                        },
+                        {
+                            "sex": sex,
+                            "username": username,
+                            "birthday": birthday,
+                            ...
+                        },
+                        ...
+
+                    ]
+                }
+              失败：
+                所有http状态码不为200的都是失败
+                注意这里的message,在内部实现有对应的字典{"status_code":422, "message": "Validation Failed"}
+
+                HTTP/1.1 422 Unprocessable Entity
+                Content-Length: 149
+                {
+                  "message": "Validation Failed",
+                  "errors": {
+                        "local":"title",
+                        "detail":"may be type is error"
+                  },
+                  "help_documentation_url": "https://developer.github.com/v3"
+                }
+
+
+    PUT /version/user/{user_id} -- update
+        1、请求方式
+            curl -H "Authorization: token OAUTH-TOKEN" -d '{"sex": sex, "username": username, ...}' https://api.github.com/version/user/{user_id}
+        2、返回示例
+            返回更新后的结果，失败返回原因
+            {
+                "sex":sex,
+                "username":username,
+                ...
+            }
+
+            {
+                  "message": "Validation Failed",
+                  "errors": {
+                        "local":"title",
+                        "detail":"may be type is error"
+                  },
+                  "help_documentation_url": "https://developer.github.com/v3"
+            }
+
+
+    PATCH /version/user/{user_id} -- update
+        1、请求方式
+            curl -H "Authorization: token OAUTH-TOKEN" -d '{"username": username, ...}' https://api.github.com/version/user/{user_id}
+        2、返回示例
+            返回更新后的结果，失败返回原因
+            {
+                "username":username,
+            }
+
+            {
+                  "message": "Validation Failed",
+                  "errors": {
+                        "local":"title",
+                        "detail":"may be type is error"
+                  },
+                  "help_documentation_url": "https://developer.github.com/v3"
+            }
+    DELETE /version/user/{user_id} -- delete
+        删除指定用户
+        curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com/version/user/{user_id}
+
+    POST /version/user -- create
+        curl  -d '{"password": password, "username": username, ...}' https://api.github.com/version/user
+
+    POST /version/user -- bulk create
+        curl  -d '[{"password": password, "username": username, ...},{...},...]' https://api.github.com/version/user
+
+
+请求参数格式
+
+    响应参数格式
+        状态码
+            200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。
+            201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。
+            202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）
+            204 NO CONTENT - [DELETE]：用户删除数据成功。
+            400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。
+            401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。
+            403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。
+            404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。
+            406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。
+            410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。
+            422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。
+            500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。
+
+        {
+          "message": "Requires authentication",
+          "documentation_url": "https://developer.github.com/v3"
+        }
+
+        HTTP/1.1 400 Bad Request
+        Content-Length: 40
+        {"message":"Body should be a JSON object"}
+
+        HTTP/1.1 422 Unprocessable Entity
+        Content-Length: 149
+        {
+          "message": "Validation Failed",
+          "errors": [
+            {
+              "resource": "Issue",
+              "field": "title",
+              "code": "missing_field"
+            }
+          ]
+        }
+    权限认证
+        Basic Authentication
+            curl -u "username" https://api.github.com
+        OAuth2 Token (sent in a header)
+            curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com
+        OAuth2 Token (sent as a parameter)
+            curl https://api.github.com/?access_token=OAUTH-TOKEN
+            Read more about OAuth2. Note that OAuth2 tokens can be acquired programmatically, for applications that are not websites.
+
+        OAuth2 Key/Secret
+            curl 'https://api.github.com/users/whatever?client_id=xxxx&client_secret=yyyy'
+
+        未认证响应
+            curl -i https://api.github.com -u foo:bar
+            HTTP/1.1 401 Unauthorized
+
+            {
+              "message": "Bad credentials",
+              "documentation_url": "https://developer.github.com/v3"
+            }
+        尝试多次认证失败后
+            curl -i https://api.github.com -u valid_username:valid_password
+            HTTP/1.1 403 Forbidden
+
+            {
+              "message": "Maximum number of login attempts exceeded. Please try again later.",
+              "documentation_url": "https://developer.github.com/v3"
+            }
+
+    支持分页显示参数
+        curl 'https://api.github.com/user/repos?page=2&per_page=100'
+

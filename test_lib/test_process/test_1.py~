@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+import subprocess
+
+def test_1():
+    subprocess.call(['ls', '-l'])
+
+def test_2():
+    # 重新开启一个shell执行命令，默认返回值为程序的退出码
+    subprocess.call('echo $HOME', shell=True)
+def test_3():
+    try:
+        # 类似于call，只是如果出错，则产生CallProcessError异常
+        subprocess.check_call(['false'])
+    except subprocess.CalledProcessError as err:
+        print "ERROR:", err
+if __name__ == '__main__':
+    # test_1()
+    test_2()

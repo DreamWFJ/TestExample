@@ -1,0 +1,43 @@
+  <mirrors>
+    <mirror>
+      <id>awstack</id>
+      <mirrorOf>*</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://113.57.167.42:9083/nexus/content/groups/public</url>
+    </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <repositories>
+        <repository>
+          <id>awstack</id>
+          <url>http://113.57.167.42:9083/nexus/content/groups/public</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+
+  <servers>
+    <server>
+      <id>awstack-release</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+    <server>
+      <id>awstack-snapshots</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+  </servers>
+

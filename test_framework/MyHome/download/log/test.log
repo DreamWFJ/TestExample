@@ -1,0 +1,5 @@
+[I 161206 15:15:45 web:1971] 304 GET /static/js/node/table.js?v=b3292eebd5645d51cba77bc0e85a9ed3 (127.0.0.1) 1.00ms
+[I 161206 15:15:45 web:1971] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (127.0.0.1) 0.00ms
+[I 161206 15:15:46 web:1971] 304 GET /static/js/jquery_terminal/jquery.terminal.min.js (127.0.0.1) 2.00ms
+[W 161206 15:15:46 web:1971] 404 GET /manage/index.js.map (127.0.0.1) 1.00ms
+[I 161206 15:15:46 web:1971] 200 GET /manage/node/data?limit=10&offset=0&order=asc&start_time=&end_time=&node_ip=&node_statu= (127.0.0.1) 1.00ms

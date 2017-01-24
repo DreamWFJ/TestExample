@@ -1,0 +1,4 @@
+[I 161206 14:12:34 web:1971] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (127.0.0.1) 1.00ms
+[W 161206 14:12:34 web:1971] 404 GET /manage/index.js.map (127.0.0.1) 1.00ms
+[I 161206 14:12:35 web:1971] 200 GET /manage/node/data?limit=10&offset=0&order=asc&start_time=&end_time=&node_ip=&node_statu= (127.0.0.1) 1.00ms
+[I 161206 14:12:36 web:1971] 200 GET /download/log?filename=test.log (127.0.0.1) 1.00ms

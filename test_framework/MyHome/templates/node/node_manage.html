@@ -1,0 +1,192 @@
+{% extends "../frame.html" %}
+{% block title %}Manage Task{% end %}
+{% block external_script %}{% end %}
+{% block control_panel %}
+<form id="SearchNodeForm" class="form-horizontal">
+    {% raw xsrf_form_html() %}
+    <div class="form-group container-fluid" style="margin-top:15px">
+        <div class="row">
+            <div class="col-xs-14 col-md-10">
+                <label class="control-label col-sm-1" for="txt_search_node_ip">节点IP</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txt_search_node_ip">
+                </div>
+                <label for="txt_search_start_time" class="col-sm-2 control-label">开始时间</label>
+                <div class="input-group date form_datetime col-sm-3"
+                     data-link-field="txt_search_start_time">
+                    <input class="form-control" size="16" type="text" value="">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+                <input type="hidden" id="txt_search_start_time" value="" />
+            </div>
+            <div class="col-xs-4 col-md-2"></div>
+        </div>
+
+        <div class="row" style="margin-top:15px">
+            <div class="col-xs-14 col-md-10">
+                <label class="control-label col-sm-1" for="txt_search_node_status">节点状态</label>
+                <div class="col-sm-3">
+                    <select class="form-control" name="txt_search_node_status" id="txt_search_node_status">
+                        <option value="2">All Status</option>
+                        <option value="0">Not Connect</option>
+                        <option value="1">Connected</option>
+                    </select>
+                </div>
+                <label for="txt_search_end_time" class="control-label col-sm-2">结束时间</label>
+                <div class="input-group date form_datetime col-sm-3" data-link-field="txt_search_end_time">
+                    <input class="form-control" size="16" type="text" value="">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+                <input type="hidden" id="txt_search_end_time" value="" />
+
+            </div>
+            <div class="col-xs-4 col-md-2">
+                <div style="text-align:left;">
+                    <button type="button" onclick="nodeManageRefreshTable();" class="btn btn-primary">查询</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% end %}
+{% block table_tool %}
+<!-- 工具 -->
+<div id="toolbar" class="btn-group">
+    <button id="btn_add" type="button" class="btn btn-default" data-toggle="modal" data-target="#add_or_update_modal">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+    </button>
+    <button id="btn_update" type="button" class="btn btn-warning" disabled data-toggle="modal" data-target="#add_or_update_modal">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+    </button>
+    <button id="btn_delete" type="button" class="btn btn-danger" disabled>
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+    </button>
+    <span class="alert"></span>
+</div>
+{% end %}
+
+{% block table %}
+    <!-- 内容 -->
+    <table id="id-for-manage-article"
+            data-toolbar="#toolbar"
+            data-search="false"
+            data-striped="true"
+            data-sort-order="asc"
+            data-sort-stable="true"
+            data-show-refresh="true"
+            data-show-toggle="true"
+            data-show-columns="true"
+            data-show-export="true"
+            data-detail-view="true"
+            data-detail-formatter="detailFormatter"
+            data-minimum-count-columns="2"
+            data-show-pagination-switch="true"
+            data-pagination="true"
+            data-id-field="id"
+            data-page-size="10"
+            data-page-list="[5, 10, 25, 50, 100, ALL]"
+            data-show-footer="false"
+            data-side-pagination="server"
+            data-url="/manage/node/data"
+            data-method="get"
+            data-pagination-first-text="First"
+            data-pagination-pre-text="Previous"
+            data-pagination-next-text="Next"
+            data-pagination-last-text="Last"
+            data-response-handler="responseHandler">
+    </table>
+
+    <!--终端对话框-->
+    {%  module Terminal() %}
+
+{% end %}
+
+{% block table_script %}
+    <script type="text/javascript" src="{{ static_url('js/node/table.js') }}"></script>
+{% end %}
+
+{% block modal %}
+    <!-- 添加或修改表格 的对话框 -->
+    <div id="add_or_update_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="AddOrUpdateModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="AddOrUpdateNodeInfoForm" method="post" class="form-horizontal">
+                {% raw xsrf_form_html() %}
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Add or Update Node Information</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Node Name</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="node_name" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Node IP</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="node_ip" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Node Port</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="node_port" value="22" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Authentication User</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="auth_user" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Authentication Password</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="auth_passwd" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Node Description</label>
+                            <div class="col-md-8">
+                                <textarea class="form-control" cols="5" rows="5" name="node_description" placeholder="Node Description"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-lg-5 col-lg-offset-3">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary submit">Submit</button>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </form>
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% end %}
+
+{% block internal_script %}
+    <script>
+        $('.form_datetime').datetimepicker({
+            //language:  'fr',
+            weekStart: 1,
+            format: "yyyy-mm-dd HH:ii:ss",
+            todayBtn:  true,
+            autoclose: true,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            pickerPosition: "bottom-left"
+        });
+
+    </script>
+{% end %}
+
