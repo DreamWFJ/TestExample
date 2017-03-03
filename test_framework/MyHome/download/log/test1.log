@@ -1,6 +1,0 @@
-haha
-[W 161206 15:18:27 web:1971] 404 GET /manage/index.js.map (127.0.0.1) 1.00ms
-[I 161206 15:18:27 web:1971] 200 GET /manage/node/data?limit=10&offset=0&order=asc&start_time=&end_time=&node_ip=&node_statu= (127.0.0.1) 1.00ms
-[I 161206 15:18:28 web:1971] 200 GET /download/file?filename=test.log (127.0.0.1) 0.00ms
-filename:  test.log
-log_file_path:  F:\Code\Python\test\test_framework\MyHome\download\log\test.log
