@@ -1,0 +1,101 @@
+plain: Scroll of Remove Curse
+single-quoted: 'EASY_KNOW'
+double-quoted: "?"
+literal: |    # Borrowed from http://www.kersbergen.com/flump/religion.html
+  by hjw              ___
+     __              /.-.\
+    /  )_____________\\  Y
+   /_ /=== == === === =\ _\_
+  ( /)=== == === === == Y   \
+   `-------------------(  o  )
+                        \___/
+folded: >
+  It removes all ordinary curses from all equipped items.
+  Heavy or permanent curses are unaffected.
+
+
+# 字典之间使用冒号分隔
+base armor class: 0
+base damage: [4,4]
+plus to-hit: 12
+plus to-dam: 16
+plus to-ac: 0
+
+# 复杂的键用?号表示
+? !!python/tuple [0,0]
+: The Hero
+? !!python/tuple [0,1]
+: Treasure
+? !!python/tuple [1,0]
+: Treasure
+? !!python/tuple [1,1]
+: The Dragon
+
+# 嵌入字典
+hero:
+  hp: 34
+  sp: 8
+  level: 4
+orc:
+  hp: 12
+  sp: 0
+  level: 2
+
+
+Test:
+# 列表使用 - 分隔
+- name: PyYAML
+  status: 4
+  license: MIT
+  language: Python
+- name: PySyck
+  status: 5
+  license: BSD
+  language: Python
+
+# 设置锚和引用 & *
+left hand: &A
+  name: The Bastard Sword of Eowyn
+  weight: 30
+right hand: *A
+
+# 下面2中效果是一样的
+boolean: true
+integer: 3
+float: 3.14
+boolean: !!bool "true"
+integer: !!int "3"
+float: !!float "3.14"
+
+#YAML tag	Python type
+#Standard YAML tags
+#!!null	None
+#!!bool	bool
+#!!int	int or long (int in Python 3)
+#!!float	float
+#!!binary	str (bytes in Python 3)
+#!!timestamp	datetime.datetime
+#!!omap, !!pairs	list of pairs
+#!!set	set
+#!!str	str or unicode (str in Python 3)
+#!!seq	list
+#!!map	dict
+#Python-specific tags
+#!!python/none	None
+#!!python/bool	bool
+#!!python/bytes	(bytes in Python 3)
+#!!python/str	str (str in Python 3)
+#!!python/unicode	unicode (str in Python 3)
+#!!python/int	int
+#!!python/long	long (int in Python 3)
+#!!python/float	float
+#!!python/complex	complex
+#!!python/list	list
+#!!python/tuple	tuple
+#!!python/dict	dict
+#Complex Python tags
+#!!python/name:module.name	module.name
+#!!python/module:package.module	package.module
+#!!python/object:module.cls	module.cls instance
+#!!python/object/new:module.cls	module.cls instance
+#!!python/object/apply:module.f	value of f(...)
