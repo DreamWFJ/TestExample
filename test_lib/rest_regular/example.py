@@ -623,6 +623,13 @@ def test_22():
         print num, repr(para)
         print
 
+def test_23():
+    filenames = ['../../test/pic.jpg', '.. a.jpg']
+    for filename in filenames:
+        print "filename: ",filename
+        result = re.search(r'(.*)(?P<name>\w+\.(jpg|gif)$)', filename)
+        if result:
+            print "result: ", result.groupdict()['name']
 
 if __name__ == '__main__':
     # test_1()
@@ -644,6 +651,7 @@ if __name__ == '__main__':
     # test_17()
     # test_18()
     # test_19()
-    test_20()
+    # test_20()
     # test_21()
     # test_22()
+    test_23()

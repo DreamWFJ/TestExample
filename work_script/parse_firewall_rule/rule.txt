@@ -1,0 +1,2300 @@
+
+鏄QHBUFWC0-19F# show
+鏄QHBUFWC0-19F# show con
+  configuration          Show configuration
+  console                Show console options
+  contentfilter          Show content filter configuration
+  contentfilter-profile  Show content filter profile information
+  controller             Show controller information
+鏄QHBUFWC0-19F# show confi
+鏄QHBUFWC0-19F# show configuration 
+
+Building configuration..
+Running configuration:
+!
+Version 5.5
+
+ip vrouter "trust-vr"
+exit
+vswitch "vswitch1"
+exit
+zone "mgt"
+exit
+zone "trust"
+exit
+zone "untrust"
+exit
+zone "dmz"
+exit
+zone "l2-trust" l2
+exit
+zone "l2-untrust" l2
+exit
+zone "l2-dmz" l2
+exit
+zone "VPNHub"
+exit
+zone "HA"
+exit
+pbr-policy "ipsec" vrouter "trust-vr"
+exit
+interface vswitchif1
+exit
+interface MGT0
+exit
+interface HA0
+exit
+interface ethernet0/0
+exit
+interface ethernet0/1
+exit
+interface ethernet0/2
+exit
+interface ethernet0/3
+exit
+ --More--            interface ethernet0/4
+exit
+interface ethernet0/5
+exit
+interface ethernet0/6
+exit
+interface ethernet0/7
+exit
+interface ethernet0/8
+exit
+interface ethernet0/9
+exit
+interface tunnel1
+exit
+interface tunnel2
+exit
+interface tunnel4
+exit
+interface tunnel5
+exit
+interface tunnel8
+exit
+interface tunnel9
+exit
+interface tunnel21
+exit
+interface tunnel22
+exit
+interface tunnel10
+exit
+address "private_network"
+exit
+address "monitor_address"
+exit
+address "0.0.0.0/0"
+exit
+address "10.255.0.0/16"
+exit
+address "113.208.138.107/32"
+exit
+address "172.16.0.0/21"
+ --More--            exit
+address "10.10.24.0_Mask21"
+exit
+address "VPN-lvmeng-in"
+exit
+address "O2O-server-in"
+exit
+address "O2O-server-out"
+exit
+address "O2O-server-in-1"
+exit
+address "O2O-server-out-1"
+exit
+address "O2O-server-in-2"
+exit
+address "O2O-server-out-2"
+exit
+address "10.10.0.0_Mask21"
+exit
+address "20.20.20.0_Mask24"
+exit
+address "10.10.0.0_Mask20"
+exit
+address "10.255.64.0_Mask18"
+exit
+address "10.255.0.0_Mask18"
+exit
+address "10.20.0.0_Mask23"
+exit
+address "NETWORK_OBJ_10.10.255.0_25"
+exit
+address "172.16.3.32"
+exit
+address "DM_INLINE_NETWORK_1"
+exit
+address "DM_INLINE_NETWORK_2"
+exit
+address "DM_INLINE_NETWORK_3"
+exit
+address "DM_INLINE_NETWORK_4"
+exit
+ --More--            address "DM_INLINE_NETWORK_5"
+exit
+address "DM_INLINE_NETWORK_6"
+exit
+address "permit-3.31"
+exit
+address "10.20.0.0_mask20"
+exit
+address "10.20.20.0_mask22"
+exit
+address "浼樺寲鍦板潃"
+exit
+address "YOUTUBE"
+exit
+address "RRD鐧藉悕鍗昣36.110.112.103"
+exit
+address "姘戠敓_36.110.112.103"
+exit
+address "172.16.3.195/32"
+exit
+address "172.16.2.152/32"
+exit
+aaa-server "local" type local
+exit
+service "tcp3336"
+  tcp dst-port 3336 
+exit
+service "tcp3306"
+  tcp dst-port 3306 
+exit
+service "udp33433-33523"
+  udp dst-port 33433 33523 
+exit
+service "tcp3333"
+  tcp dst-port 3333 
+exit
+service "22222"
+  tcp dst-port 22222 
+exit
+service "3389"
+  tcp dst-port 3389 
+ --More--            exit
+service "8000"
+  tcp dst-port 8000 
+exit
+service "https[443]"
+  description "https[443]"
+  tcp dst-port 443 
+exit
+service "http[80]"
+  description "http[80]"
+  tcp dst-port 80 
+exit
+service "IMO_UDP_5186"
+  udp dst-port 5186 
+exit
+service "IMO_TCP_1863"
+  tcp dst-port 1863 
+exit
+service "IMO_TCP_5186"
+  tcp dst-port 5186 
+exit
+service "IMO_TCP_6000"
+  tcp dst-port 6000 
+exit
+service "IMO_TCP_7000"
+  tcp dst-port 7000 
+exit
+service "IMO_TCP_8999"
+  tcp dst-port 8999 
+exit
+service "IMO_TCP_10000"
+  tcp dst-port 10000 
+exit
+service "IMO_UDP_1863"
+  udp dst-port 1863 
+exit
+service "IMO_TCP_5722"
+  tcp dst-port 5722 
+exit
+service "IMO_TCP_8091"
+  tcp dst-port 8091 
+ --More--            exit
+service "IMO_TCP_3306"
+  tcp dst-port 3306 
+exit
+service "30080"
+  tcp dst-port 30080 
+exit
+service "8080"
+  tcp dst-port 8080 
+exit
+service "8888"
+  tcp dst-port 8888 
+exit
+service "2181"
+  tcp dst-port 2181 
+exit
+service "23800"
+  tcp dst-port 23800 
+exit
+service "21121"
+  tcp dst-port 21121 
+exit
+service "23106"
+  tcp dst-port 23106 
+exit
+service "23107"
+  tcp dst-port 23107 
+exit
+service "23109"
+  tcp dst-port 23109 
+exit
+service "23119"
+  tcp dst-port 23119 
+exit
+service "23120"
+  tcp dst-port 23120 
+exit
+service "23121"
+  tcp dst-port 23121 
+exit
+service "23122"
+ --More--              tcp dst-port 23122 
+exit
+service "23108"
+  tcp dst-port 23108 
+exit
+service "28080"
+  tcp dst-port 28080 
+exit
+service "10981"
+  tcp dst-port 10981 
+exit
+service "10983"
+  tcp dst-port 10983 
+exit
+service "10782"
+  tcp dst-port 10782 
+exit
+service "10788"
+  tcp dst-port 10788 
+exit
+service "12780"
+  tcp dst-port 12780 
+exit
+service "24109"
+  tcp dst-port 24109 
+exit
+service "26131"
+  tcp dst-port 26131 
+exit
+service "8585"
+  tcp dst-port 8585 
+exit
+service "8686"
+  tcp dst-port 8686 
+exit
+service "28131"
+  tcp dst-port 28131 
+exit
+service "8443"
+  tcp dst-port 8443 
+exit
+ --More--            service "11111"
+  tcp dst-port 11111 
+exit
+service "TCP_10000"
+  description "TCP_10000"
+  tcp dst-port 10000 src-port 0 65535 
+exit
+service "TCP_20000"
+  description "TCP_20000"
+  tcp dst-port 20000 src-port 0 65535 
+exit
+service "TCP_8008"
+  tcp dst-port 8008 
+exit
+service "TCP_10080"
+  tcp dst-port 10080 
+exit
+service "TCP_20080"
+  tcp dst-port 20080 
+exit
+service "TCP_8080"
+  tcp dst-port 8080 
+exit
+ips sigset "dns" template dns
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "ftp" template ftp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "http" template http
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+  web-server "default"
+ --More--              exit
+exit
+ips sigset "pop3" template pop3
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "smtp" template smtp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "telnet" template telnet
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "other-tcp" template other-tcp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "other-udp" template other-udp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "imap" template imap
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "finger" template finger
+  max-scan-bytes 30720
+  attack-level critical action reset 
+ --More--              attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "sunrpc" template sunrpc
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "nntp" template nntp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "tftp" template tftp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "snmp" template snmp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "mysql" template mysql
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "mssql" template mssql
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "oracle" template oracle
+  max-scan-bytes 30720
+ --More--              attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "msrpc" template msrpc
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "netbios" template netbios
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "dhcp" template dhcp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "ldap" template ldap
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "voip" template voip
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_dns" template dns
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_ftp" template ftp
+ --More--              max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_http" template http
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+  web-server "default"
+  exit
+exit
+ips sigset "default_pop3" template pop3
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_smtp" template smtp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_telnet" template telnet
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_other-tcp" template other-tcp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_other-udp" template other-udp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+ --More--              attack-level warning action reset 
+exit
+ips sigset "default_imap" template imap
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_finger" template finger
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_sunrpc" template sunrpc
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_nntp" template nntp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_tftp" template tftp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_snmp" template snmp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_mysql" template mysql
+  max-scan-bytes 30720
+  attack-level critical action reset 
+ --More--              attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_mssql" template mssql
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_oracle" template oracle
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_msrpc" template msrpc
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_netbios" template netbios
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_dhcp" template dhcp
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_ldap" template ldap
+  max-scan-bytes 30720
+  attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "default_voip" template voip
+  max-scan-bytes 30720
+ --More--              attack-level critical action reset 
+  attack-level info action reset 
+  attack-level warning action reset 
+exit
+ips sigset "loose_dns" template dns
+exit
+ips sigset "loose_ftp" template ftp
+exit
+ips sigset "loose_http" template http
+  web-server "default"
+  exit
+exit
+ips sigset "loose_pop3" template pop3
+exit
+ips sigset "loose_smtp" template smtp
+exit
+ips sigset "loose_telnet" template telnet
+exit
+ips sigset "loose_other-tcp" template other-tcp
+exit
+ips sigset "loose_other-udp" template other-udp
+exit
+ips sigset "loose_imap" template imap
+exit
+ips sigset "loose_finger" template finger
+exit
+ips sigset "loose_sunrpc" template sunrpc
+exit
+ips sigset "loose_nntp" template nntp
+exit
+ips sigset "loose_tftp" template tftp
+exit
+ips sigset "loose_snmp" template snmp
+exit
+ips sigset "loose_mysql" template mysql
+exit
+ips sigset "loose_mssql" template mssql
+exit
+ips sigset "loose_oracle" template oracle
+exit
+ips sigset "loose_msrpc" template msrpc
+ --More--            exit
+ips sigset "loose_netbios" template netbios
+exit
+ips sigset "loose_dhcp" template dhcp
+exit
+ips sigset "loose_ldap" template ldap
+exit
+ips sigset "loose_voip" template voip
+exit
+ips sigset "predef_default_dns" template dns
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_ftp" template ftp
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_http" template http
+  max-scan-bytes 30720
+  web-server "default"
+  exit
+exit
+ips sigset "predef_default_pop3" template pop3
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_smtp" template smtp
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_telnet" template telnet
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_other-tcp" template other-tcp
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_other-udp" template other-udp
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_imap" template imap
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_finger" template finger
+  max-scan-bytes 30720
+exit
+ --More--            ips sigset "predef_default_sunrpc" template sunrpc
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_nntp" template nntp
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_tftp" template tftp
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_snmp" template snmp
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_mysql" template mysql
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_mssql" template mssql
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_oracle" template oracle
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_msrpc" template msrpc
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_netbios" template netbios
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_dhcp" template dhcp
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_ldap" template ldap
+  max-scan-bytes 30720
+exit
+ips sigset "predef_default_voip" template voip
+  max-scan-bytes 30720
+exit
+ips profile "no-ips"
+exit
+ips profile "predef_default"
+  sigset "default_dns"
+  sigset "default_ftp"
+ --More--              sigset "default_http"
+  sigset "default_pop3"
+  sigset "default_smtp"
+  sigset "default_telnet"
+  sigset "default_other-tcp"
+  sigset "default_other-udp"
+  sigset "default_imap"
+  sigset "default_finger"
+  sigset "default_sunrpc"
+  sigset "default_nntp"
+  sigset "default_tftp"
+  sigset "default_snmp"
+  sigset "default_mysql"
+  sigset "default_mssql"
+  sigset "default_oracle"
+  sigset "default_msrpc"
+  sigset "default_netbios"
+  sigset "default_dhcp"
+  sigset "default_ldap"
+  sigset "default_voip"
+exit
+ips profile "predef_loose"
+  sigset "loose_dns"
+  sigset "loose_ftp"
+  sigset "loose_http"
+  sigset "loose_pop3"
+  sigset "loose_smtp"
+  sigset "loose_telnet"
+  sigset "loose_other-tcp"
+  sigset "loose_other-udp"
+  sigset "loose_imap"
+  sigset "loose_finger"
+  sigset "loose_sunrpc"
+  sigset "loose_nntp"
+  sigset "loose_tftp"
+  sigset "loose_snmp"
+  sigset "loose_mysql"
+  sigset "loose_mssql"
+  sigset "loose_oracle"
+  sigset "loose_msrpc"
+  sigset "loose_netbios"
+ --More--              sigset "loose_dhcp"
+  sigset "loose_ldap"
+  sigset "loose_voip"
+exit
+contentfilter
+  url-category "custom1"
+  url-category "custom2"
+  url-category "custom3"
+  url-category "youtube.com"
+  url "*.youtube.com" url-category "youtube.com" confidence 100
+exit
+av-profile "no-av"
+exit
+av-profile "predef_low"
+  file-type gzip
+  file-type html
+  file-type mail
+  file-type pe
+  protocol-type FTP action reset-conn
+  protocol-type HTTP action reset-conn
+  protocol-type IMAP4 action log-only
+  protocol-type POP3 action log-only
+  protocol-type SMTP action log-only
+exit
+av-profile "predef_middle"
+  file-type gzip
+  file-type html
+  file-type mail
+  file-type pe
+  file-type zip
+  file-type rar
+  protocol-type FTP action reset-conn
+  protocol-type HTTP action reset-conn
+  protocol-type IMAP4 action log-only
+  protocol-type POP3 action log-only
+  protocol-type SMTP action log-only
+exit
+av-profile "predef_high"
+  file-type gzip
+  file-type html
+  file-type mail
+ --More--              file-type pe
+  file-type zip
+  file-type rar
+  file-type jpeg
+  file-type bzip2
+  file-type riff
+  file-type tar
+  protocol-type FTP action reset-conn
+  protocol-type HTTP action reset-conn
+  protocol-type IMAP4 action fill-magic
+  protocol-type POP3 action fill-magic
+  protocol-type SMTP action fill-magic
+exit
+url-profile "youtube.com"
+  url-category "youtube.com" block
+  rule id 8066
+exit
+aaa-server "local" type local
+  user "liquan"
+    password "iAw6RBeoSvtpOKQVOpZJ0irolEo8"
+  exit
+  user "zhangle"
+    password "+FOOyy7/Z/E/Buh53VTIWGuLRWcn"
+  exit
+  user "huangqiuzi"
+    password "+FOOyy7/Z/E/Buh53VTIWGuLRWcn"
+  exit
+  user "liufeng"
+    password "GDfm2sSjOpEtEW5cD2EnLGuLRWcT"
+  exit
+  user "zhangxu"
+    password "ljQ1BFOTt9lprYofk5Jg8mYzSHM3"
+  exit
+  user "zhanglingling"
+    password "CxCiKOJgfhEokvxDD2/AR2Q8mGk1"
+  exit
+  user "guoweidong"
+    password "15xywjA4fJjb6aiSg33LImYzSHMa"
+  exit
+  user "menchao"
+    password "HleNgsOZc4kpMBcHyaHl2nSw3FEP"
+ --More--              exit
+  user "test"
+    password "JyiTsVARIbqM46/ewqR6kWuLRWc6"
+  exit
+  user "zoudanli"
+    password "9KJP6SyA1a1oKFGW4Q9rtWuLRWcF"
+  exit
+exit
+admin user "hillstone"
+  password mk28uhCACHMV4oUc5BavavMgOC
+  role admin
+  access console
+exit
+admin user "guowd"
+  password 7F+htYyff1revgZUiiOmsl2gQO
+  role admin
+  access console
+  access ssh
+  access https
+exit
+admin user "menchao"
+  password DDT87xQR/HtPzN6y7HNNMB5Q8O
+  role admin
+  access console
+  access ssh
+  access https
+exit
+logging event to syslog 
+logging threat to buffer severity informational size 1048576
+logging threat to syslog custom-format  severity informational
+no logging network to console
+logging traffic nat on
+logging configuration to syslog 
+no logging nbc on
+logging syslog 10.10.4.40 vrouter "trust-vr" udp 514 type all
+logging syslog 10.10.6.217 vrouter "trust-vr" udp 514 type all
+logging syslog 10.10.3.200 vrouter "trust-vr" udp 514 type all
+pki trust-domain "trust_domain_default"
+  keypair "Default-Key"
+  enrollment self
+  subject commonName "SG-6000"
+ --More--              subject organization "Hillstone Networks"
+exit
+pki trust-domain "trust_domain_ssl_proxy"
+  keypair "Default-Key"
+  enrollment self
+  subject commonName "SG-6000"
+  subject organization "Hillstone Networks"
+exit
+pki trust-domain "network_manager_ca"
+  enrollment terminal
+exit
+pki trust-domain "trust_domain_ssl_proxy_2048"
+  enrollment self
+  subject commonName "SG-6000"
+  subject organization "Hillstone Networks"
+exit
+pppoe-client group "test"
+exit
+address "private_network"
+  ip 10.0.0.0/8
+  ip 172.16.0.0/12
+  ip 192.168.0.0/16
+exit
+address "monitor_address"
+  ip 10.0.0.0/8
+  ip 172.16.0.0/12
+  ip 192.168.0.0/16
+exit
+address "0.0.0.0/0"
+  ip 0.0.0.0/0
+exit
+address "10.255.0.0/16"
+  ip 10.255.0.0/16
+exit
+address "113.208.138.107/32"
+  ip 113.208.138.107/32
+exit
+address "172.16.0.0/21"
+  ip 172.16.0.0/21
+exit
+address "10.10.24.0_Mask21"
+ --More--              ip 10.10.24.0/21
+exit
+address "VPN-lvmeng-in"
+  ip 20.20.20.2/32
+exit
+address "O2O-server-in"
+  ip 172.16.3.31/32
+exit
+address "O2O-server-out"
+  ip 113.208.138.108/32
+exit
+address "O2O-server-in-1"
+  ip 172.16.1.44/32
+exit
+address "O2O-server-out-1"
+  ip 113.208.138.109/32
+exit
+address "O2O-server-in-2"
+  ip 172.16.1.42/32
+exit
+address "O2O-server-out-2"
+  ip 113.208.138.110/32
+exit
+address "10.10.0.0_Mask21"
+  ip 10.10.0.0/21
+exit
+address "20.20.20.0_Mask24"
+  ip 20.20.20.0/24
+exit
+address "10.10.0.0_Mask20"
+  ip 10.10.0.0/20
+exit
+address "10.255.64.0_Mask18"
+  ip 10.255.64.0/18
+exit
+address "10.255.0.0_Mask18"
+  ip 10.255.0.0/18
+exit
+address "10.20.0.0_Mask23"
+  ip 10.20.0.0/23
+exit
+ --More--            address "NETWORK_OBJ_10.10.255.0_25"
+  ip 10.10.255.0/25
+exit
+address "172.16.3.32"
+  ip 172.16.3.32/32
+exit
+address "DM_INLINE_NETWORK_1"
+  member "172.16.0.0/21"
+  member "20.20.20.0_Mask24"
+  member "10.10.0.0_Mask21"
+exit
+address "DM_INLINE_NETWORK_2"
+  member "10.10.0.0_Mask20"
+  member "172.16.0.0/21"
+exit
+address "DM_INLINE_NETWORK_3"
+  member "172.16.0.0/21"
+  member "10.10.0.0_Mask21"
+exit
+address "DM_INLINE_NETWORK_4"
+  member "10.10.0.0_Mask21"
+  member "172.16.0.0/21"
+exit
+address "DM_INLINE_NETWORK_5"
+  member "10.10.0.0_Mask21"
+  member "172.16.0.0/21"
+exit
+address "DM_INLINE_NETWORK_6"
+  member "10.10.0.0_Mask21"
+  member "172.16.0.0/21"
+  member "20.20.20.0_Mask24"
+exit
+address "permit-3.31"
+  ip 120.132.54.68/32
+  ip 120.132.54.69/32
+  ip 120.132.59.102/32
+  ip 123.59.44.158/32
+  ip 123.59.44.197/32
+  ip 123.59.60.241/32
+  ip 123.59.60.242/32
+  ip 123.59.60.243/32
+ --More--              ip 123.59.60.244/32
+  ip 123.59.64.45/32
+  ip 123.59.68.65/32
+  ip 123.59.69.250/32
+exit
+address "10.20.0.0_mask20"
+  ip 10.20.0.0/20
+exit
+address "10.20.20.0_mask22"
+  ip 10.20.20.0/22
+exit
+address "浼樺寲鍦板潃"
+  description "浼樺寲鍦板潃"
+  host "jeasyui.com" vr "trust-vr"
+  host "www.jeasyui.com" vr "trust-vr"
+  host "getbootstrap.com" vr "trust-vr"
+  host "www.getbootstrap.com" vr "trust-vr"
+  host "mvnrepository.com" vr "trust-vr"
+  host "www.mvnrepository.com" vr "trust-vr"
+  host "stackoverflow.com" vr "trust-vr"
+  host "www.stackoverflow.com" vr "trust-vr"
+  host "quantopian.com" vr "trust-vr"
+  host "www.quantopian.com" vr "trust-vr"
+  host "rstudio.org" vr "trust-vr"
+  host "www.rstudio.org" vr "trust-vr"
+  host "wordpress.com" vr "trust-vr"
+  host "www.wordpress.com" vr "trust-vr"
+  host "readthedocs.org" vr "trust-vr"
+  host "www.readthedocs.org" vr "trust-vr"
+  host "www.gmail.com" vr "trust-vr"
+  host "gmail.com" vr "trust-vr"
+  host "www.google.com" vr "trust-vr"
+  host "www.google.com.hk" vr "trust-vr"
+  host "map.google.com" vr "trust-vr"
+  host "map.google.com.hk" vr "trust-vr"
+  host "mail.google.com" vr "trust-vr"
+  host "mail.google.com.hk" vr "trust-vr"
+  host "accounts.google.com" vr "trust-vr"
+  host "ssl.gstatic.com" vr "trust-vr"
+  host "www.googleadservices.com" vr "trust-vr"
+exit
+ --More--            address "YOUTUBE"
+  range 173.194.72.100 173.194.72.140
+exit
+address "RRD鐧藉悕鍗昣36.110.112.103"
+  ip 120.132.59.235/32
+  ip 123.59.44.158/32
+exit
+address "姘戠敓_36.110.112.103"
+  ip 120.132.59.235/32
+  ip 121.195.116.102/32
+  ip 223.71.169.102/32
+  ip 197.3.187.250/32
+  ip 111.205.207.253/32
+  ip 111.205.207.103/32
+  ip 111.205.207.105/32
+exit
+address "172.16.3.195/32"
+  ip 172.16.3.195/32
+exit
+address "172.16.2.152/32"
+  ip 172.16.2.153/32
+exit
+zone "mgt"
+exit
+zone "trust"
+  bind pbr-policy "ipsec"
+exit
+zone "untrust"
+  type wan
+  ad tear-drop
+  ad ip-spoofing
+  ad land-attack
+  ad ip-option
+  ad ip-fragment
+  ad ip-directed-broadcast
+  ad winnuke
+  ad port-scan
+  ad syn-flood
+  ad tcp-anomaly
+  ad icmp-flood
+  ad ip-sweep
+ --More--              ad ping-of-death
+  ad huge-icmp-pak
+  ad udp-flood
+  ad dns-query-flood
+  ad dns-query-flood recursion
+  ad arp-spoofing reverse-query
+  ad syn-proxy
+  ad syn-proxy cookie
+exit
+zone "dmz"
+exit
+zone "l2-trust" l2
+exit
+zone "l2-untrust" l2
+  type wan
+exit
+zone "l2-dmz" l2
+exit
+zone "VPNHub"
+exit
+zone "HA"
+exit
+hostname "鏄QHBUFWC0-19F"
+console timeout 0
+admin host any any
+isakmp proposal "psk-md5-des-g2"
+  hash md5
+  encryption des
+exit
+
+isakmp proposal "psk-md5-3des-g2"
+  hash md5
+exit
+
+isakmp proposal "psk-md5-aes128-g2"
+  hash md5
+  encryption aes
+exit
+
+isakmp proposal "psk-md5-aes256-g2"
+  hash md5
+ --More--              encryption aes-256
+exit
+
+isakmp proposal "psk-sha-des-g2"
+  encryption des
+exit
+
+isakmp proposal "psk-sha-3des-g2"
+exit
+
+isakmp proposal "psk-sha-aes128-g2"
+  encryption aes
+exit
+
+isakmp proposal "psk-sha-aes256-g2"
+  encryption aes-256
+exit
+
+isakmp proposal "rsa-md5-des-g2"
+  authentication rsa-sig
+  hash md5
+  encryption des
+exit
+
+isakmp proposal "rsa-md5-3des-g2"
+  authentication rsa-sig
+  hash md5
+exit
+
+isakmp proposal "rsa-md5-aes128-g2"
+  authentication rsa-sig
+  hash md5
+  encryption aes
+exit
+
+isakmp proposal "rsa-md5-aes256-g2"
+  authentication rsa-sig
+  hash md5
+  encryption aes-256
+exit
+
+ --More--            isakmp proposal "rsa-sha-des-g2"
+  authentication rsa-sig
+  encryption des
+exit
+
+isakmp proposal "rsa-sha-3des-g2"
+  authentication rsa-sig
+exit
+
+isakmp proposal "rsa-sha-aes128-g2"
+  authentication rsa-sig
+  encryption aes
+exit
+
+isakmp proposal "rsa-sha-aes256-g2"
+  authentication rsa-sig
+  encryption aes-256
+exit
+
+isakmp proposal "dsa-sha-des-g2"
+  authentication dsa-sig
+  encryption des
+exit
+
+isakmp proposal "dsa-sha-3des-g2"
+  authentication dsa-sig
+exit
+
+isakmp proposal "dsa-sha-aes128-g2"
+  authentication dsa-sig
+  encryption aes
+exit
+
+isakmp proposal "dsa-sha-aes256-g2"
+  authentication dsa-sig
+  encryption aes-256
+exit
+
+isakmp proposal "鍥介檯"
+  hash md5
+  group 1
+ --More--            exit
+
+isakmp peer "115.182.210.132"
+  isakmp-proposal "psk-sha-aes128-g2"
+  pre-share "sQU/WacxEf8lR9J2kuMnnXAeig0Bv2"
+  peer 115.182.210.132
+  nat-traversal
+  accept-all-peer-id
+  interface ethernet0/0
+exit
+
+isakmp peer "114.113.126.98"
+  isakmp-proposal "psk-md5-des-g2"
+  pre-share "yoYsrrat6P8PCS5UXXWR+HxkibYB1s"
+  peer 114.113.126.98
+  nat-traversal
+  accept-all-peer-id
+  dpd interval 10 retry 3
+  interface ethernet0/2
+exit
+
+isakmp peer "浼樿儨10M - 36.110.69.106 P1"
+  isakmp-proposal "psk-sha-3des-g2"
+  pre-share "BPhu/RjTLK0bbH35FgziAlJ/YD0BuI"
+  peer 36.110.69.106
+  dpd interval 10 retry 3
+  interface ethernet0/2
+exit
+
+isakmp peer "浼樿儨40M - 218.205.187.58 P1"
+  isakmp-proposal "psk-sha-3des-g2"
+  pre-share "887vDRFbUEHfrjFc1YleqmY7/pUBr+"
+  peer 218.205.187.58
+  dpd interval 10 retry 3
+  interface ethernet0/0
+exit
+
+isakmp peer "鍙嬩俊 - 115.182.210.155"
+  isakmp-proposal "psk-md5-3des-g2"
+  pre-share "nGopOTtzzFUW5HzeP7/3gEH88nQB1S"
+  peer 115.182.210.155
+ --More--              nat-traversal
+  accept-all-peer-id
+  dpd interval 10 retry 3
+  interface ethernet0/0
+exit
+
+isakmp peer "61.148.68.166"
+  isakmp-proposal "psk-md5-3des-g2"
+  pre-share "JtnHZiCjzx5UKhn7nTt6aFF99IcBo4"
+  peer 61.148.68.166
+  nat-traversal
+  accept-all-peer-id
+  dpd interval 10 retry 3
+  interface ethernet0/0
+exit
+
+ipsec proposal "esp-md5-des-g2"
+  hash md5
+  encryption des
+  group 2
+exit
+
+ipsec proposal "esp-md5-des-g0"
+  hash md5
+  encryption des
+exit
+
+ipsec proposal "esp-md5-3des-g2"
+  hash md5
+  encryption 3des
+  group 2
+exit
+
+ipsec proposal "esp-md5-3des-g0"
+  hash md5
+  encryption 3des
+exit
+
+ipsec proposal "esp-md5-aes128-g2"
+  hash md5
+  encryption aes
+ --More--              group 2
+exit
+
+ipsec proposal "esp-md5-aes128-g0"
+  hash md5
+  encryption aes
+exit
+
+ipsec proposal "esp-md5-aes256-g2"
+  hash md5
+  encryption aes-256
+  group 2
+exit
+
+ipsec proposal "esp-md5-aes256-g0"
+  hash md5
+  encryption aes-256
+exit
+
+ipsec proposal "esp-sha-des-g2"
+  hash sha
+  encryption des
+  group 2
+exit
+
+ipsec proposal "esp-sha-des-g0"
+  hash sha
+  encryption des
+exit
+
+ipsec proposal "esp-sha-3des-g2"
+  hash sha
+  encryption 3des
+  group 2
+exit
+
+ipsec proposal "esp-sha-3des-g0"
+  hash sha
+  encryption 3des
+exit
+
+ --More--            ipsec proposal "esp-sha-aes128-g2"
+  hash sha
+  encryption aes
+  group 2
+exit
+
+ipsec proposal "esp-sha-aes128-g0"
+  hash sha
+  encryption aes
+exit
+
+ipsec proposal "esp-sha-aes256-g2"
+  hash sha
+  encryption aes-256
+  group 2
+exit
+
+ipsec proposal "esp-sha-aes256-g0"
+  hash sha
+  encryption aes-256
+exit
+
+ipsec proposal "鍙嬩俊"
+  hash md5
+  encryption 3des
+exit
+
+tunnel ipsec "115.182.210.132" auto
+  isakmp-peer "115.182.210.132"
+  ipsec-proposal "esp-sha-aes128-g0"
+  auto-connect
+  id local 10.10.0.0/21 remote 10.255.64.0/18 service "any"
+  id local 172.16.0.0/21 remote 10.255.64.0/18 service "any"
+exit
+tunnel ipsec "61.148.68.166" auto
+  isakmp-peer "61.148.68.166"
+  ipsec-proposal "esp-md5-3des-g0"
+  id local 172.16.0.0/21 remote 10.255.0.0/18 service "any"
+exit
+tunnel ipsec "61.148.68.166-2" auto
+  isakmp-peer "鍙嬩俊 - 115.182.210.155"
+ --More--              ipsec-proposal "esp-md5-3des-g2"
+  id local 10.10.0.0/21 remote 10.255.64.0/18 service "any"
+exit
+tunnel ipsec "114.113.126.98" auto
+  isakmp-peer "114.113.126.98"
+  ipsec-proposal "esp-md5-3des-g0"
+  auto-connect
+  check-id
+  id local 10.10.0.0/21 remote 10.20.20.0/22 service "Any"
+exit
+tunnel ipsec "114.113.126.98-10.20" auto
+  isakmp-peer "114.113.126.98"
+  ipsec-proposal "esp-md5-3des-g0"
+  auto-connect
+  id local 10.20.0.0/20 remote 10.20.20.0/22 service "Any"
+exit
+tunnel ipsec "浼樿儨10M - 36.110.69.106 P2" auto
+  isakmp-peer "浼樿儨10M - 36.110.69.106 P1"
+  ipsec-proposal "esp-sha-aes128-g0"
+  auto-connect
+exit
+tunnel ipsec "浼樿儨40M - 218.205.187.58 P2" auto
+  isakmp-peer "浼樿儨40M - 218.205.187.58 P1"
+  ipsec-proposal "esp-sha-aes128-g0"
+exit
+tunnel ipsec "115.182.210.155-2" auto
+  isakmp-peer "鍙嬩俊 - 115.182.210.155"
+  ipsec-proposal "esp-md5-3des-g2"
+  id local 10.10.0.0/21 remote 10.255.63.0/24 service "Any"
+exit
+tunnel ipsec "115.182.210.155-3" auto
+  isakmp-peer "鍙嬩俊 - 115.182.210.155"
+  ipsec-proposal "esp-md5-3des-g2"
+  id local 10.10.0.0/21 remote 10.255.128.0/17 service "Any"
+exit
+tunnel ipsec "IDC 40M 114.113.126.98" auto
+  isakmp-peer "114.113.126.98"
+  ipsec-proposal "esp-sha-aes128-g0"
+  idle-time 120
+  auto-connect
+exit
+ --More--            scvpn pool "sslvpn-pool"
+  address 10.50.1.10 10.50.1.100 netmask 255.255.255.0
+exit
+tunnel scvpn "sslvpn"
+  https-port 332
+  pool "sslvpn-pool"
+  anti-replay 32
+  host-cache-clear disable
+  split-tunnel-route 10.10.0.0/21 metric 35
+  split-tunnel-route 172.16.0.0/21 metric 35
+  split-tunnel-route 20.20.20.0/24 metric 35
+  split-tunnel-route 1.0.0.0/24 metric 35
+  split-tunnel-route 10.20.20.0/22 metric 35
+  split-tunnel-route 10.10.24.0/21 metric 35
+  aaa-server "local"
+  interface ethernet0/2
+  interface ethernet0/0
+exit
+scvpn-udp-port 16005
+interface vswitchif1
+exit
+interface MGT0
+  zone  "mgt"
+  ip address 192.168.1.1 255.255.255.0
+  manage ssh
+  manage ping
+  manage snmp
+  manage https
+  manage http
+exit
+interface HA0
+exit
+interface ethernet0/0
+  zone  "untrust"
+  ip address 113.208.138.106 255.255.255.248
+  manage ping
+  manage https
+  manage ssh
+  manage http
+  no reverse-route
+exit
+ --More--            interface ethernet0/1
+  zone  "trust"
+  ip address 1.0.0.1 255.255.255.0
+  manage ssh
+  manage https
+  manage ping
+  manage snmp
+  no reverse-route
+exit
+interface ethernet0/2
+  zone  "untrust"
+  ip address 36.110.112.98 255.255.255.240
+  manage ping
+  no reverse-route
+exit
+interface ethernet0/3
+  zone  "trust"
+  ip address 192.168.2.1 255.255.255.0
+  manage ping
+  manage ssh
+  manage http
+exit
+interface ethernet0/4
+  zone  "untrust"
+exit
+interface ethernet0/5
+exit
+interface ethernet0/6
+exit
+interface ethernet0/7
+exit
+interface ethernet0/8
+exit
+interface ethernet0/9
+exit
+interface tunnel1
+  zone  "VPNHub"
+  manage ping
+  tunnel ipsec "115.182.210.132"
+  no reverse-route
+exit
+ --More--            interface tunnel2
+  zone  "VPNHub"
+  tunnel ipsec "61.148.68.166"
+  no reverse-route
+exit
+interface tunnel4
+  zone  "VPNHub"
+  tunnel ipsec "61.148.68.166-2"
+  no reverse-route
+exit
+interface tunnel5
+  zone  "VPNHub"
+  ip address 10.50.1.1 255.255.255.0
+  manage ping
+  tunnel scvpn "sslvpn"
+  no reverse-route
+exit
+interface tunnel8
+  zone  "VPNHub"
+  description "to 鏄屽钩IDC"
+  tunnel ipsec "114.113.126.98"
+  no reverse-route
+exit
+interface tunnel9
+  zone  "VPNHub"
+  tunnel ipsec "114.113.126.98-10.20"
+  no reverse-route
+exit
+interface tunnel21
+  zone  "VPNHub"
+  description "浼樿儨10M - 36.110.69.106"
+  tunnel ipsec "浼樿儨10M - 36.110.69.106 P2"
+  reverse-route prefer
+exit
+interface tunnel22
+  zone  "VPNHub"
+  description "浼樿儨40M - 218.205.187.58"
+  tunnel ipsec "浼樿儨40M - 218.205.187.58 P2"
+  reverse-route prefer
+exit
+interface tunnel10
+ --More--              zone  "VPNHub"
+  description "IDC 40M - 114.113.126.98"
+  tunnel ipsec "IDC 40M 114.113.126.98"
+  no reverse-route
+exit
+ip vrouter "trust-vr"
+  snatrule id 5 from "10.20.10.0/24" to "Any" service "Any" eif ethernet0/0 trans-to eif-ip mode dynamicport sticky 
+  snatrule id 1 from "Any" to "Any" service "Any" eif ethernet0/0 trans-to eif-ip mode dynamicport sticky 
+  snatrule id 2 from "Any" to "Any" service "Any" eif ethernet0/2 trans-to eif-ip mode dynamicport sticky 
+  snatrule id 3 from "20.20.20.2/32" to "Any" service "Any" trans-to 113.208.138.107/32 mode static 
+  snatrule id 6 from "172.16.3.32/32" to "Any" service "tcp3336" trans-to 113.208.138.108/32 mode static 
+  snatrule id 7 from "172.16.3.31/32" to "Any" service "tcp3333" trans-to 113.208.138.108/32 mode static 
+  dnatrule id 4 from "Any" to "113.208.138.108/32" service "tcp3336" trans-to "172.16.3.32/32" port 3336 
+  dnatrule id 5 from "Any" to "113.208.138.108/32" service "tcp3333" trans-to "172.16.3.31/32" port 3333 
+  dnatrule id 6 from "Any" to "113.208.138.108" service "HTTP" trans-to "172.16.2.135" port 80 
+  dnatrule id 7 from "Any" to "113.208.138.108/32" service "22222" trans-to "172.16.2.135/32" port 22222 
+  dnatrule id 8 from "Any" to "113.208.138.108/32" service "8000" trans-to "172.16.3.97/32" port 7070 
+  dnatrule id 56 from "Any" to "36.110.112.108" service "8080" trans-to "172.16.1.91" port 8080 description "20170308_WangSaiPeng_铻?60瀵规帴" 
+  dnatrule id 55 from "Any" to "36.110.112.108" service "8443" trans-to "172.16.1.91" port 8443 description "20170308_WangSaiPeng_铻?60瀵规帴" 
+  dnatrule id 10 from "Any" to "36.110.112.99/32" service "8888" trans-to "172.16.1.48/32" port 80 
+  dnatrule id 11 from "Any" to "36.110.112.99/32" service "https[443]" trans-to "172.16.1.48/32" port 443 
+  dnatrule id 12 from "Any" to "36.110.112.100/32" service "8888" trans-to "172.16.1.4/32" port 80 
+  dnatrule id 13 from "Any" to "36.110.112.100/32" service "https[443]" trans-to "172.16.1.4/32" port 443 
+  dnatrule id 14 from "Any" to "36.110.112.101/32" service "IMO_TCP_5186" trans-to "10.10.0.102/32" port 5186 
+  dnatrule id 15 from "Any" to "36.110.112.101/32" service "IMO_TCP_1863" trans-to "10.10.0.102/32" port 1863 
+  dnatrule id 16 from "Any" to "36.110.112.101/32" service "IMO_TCP_7000" trans-to "10.10.0.102/32" port 7000 
+  dnatrule id 17 from "Any" to "36.110.112.101/32" service "IMO_TCP_8091" trans-to "10.10.0.102/32" port 8091 disable 
+  dnatrule id 19 from "Any" to "36.110.112.101/32" service "IMO_TCP_10000" trans-to "10.10.0.102/32" port 10000 
+  dnatrule id 20 from "Any" to "36.110.112.101/32" service "IMO_TCP_8999" trans-to "10.10.0.102/32" port 8999 
+  dnatrule id 22 from "Any" to "36.110.112.101/32" service "IMO_TCP_6000" trans-to "10.10.0.102/32" port 6000 
+  dnatrule id 18 from "Any" to "36.110.112.101/32" service "IMO_UDP_1863" trans-to "10.10.0.102/32" port 1863 
+  dnatrule id 21 from "Any" to "36.110.112.101/32" service "IMO_TCP_5722" trans-to "10.10.0.102/32" port 5722 
+  dnatrule id 23 from "Any" to "36.110.112.101/32" service "IMO_TCP_3306" trans-to "10.10.0.102/32" port 3306 
+  dnatrule id 9 from "Any" to "113.208.138.108/32" service "30080" trans-to "172.16.2.38/32" port 30080 description "浠婚懌寰俊鎺ュ彛娴嬭瘯锛?鏈堝簳缁撴潫鎴栭€氱煡" 
+  dnatrule id 24 from "Any" to "36.110.112.102/32" service "8080" trans-to "172.16.3.127/32" port 8080 description "寮犵画鑰€ Ucloud浜戜富鏈鸿璁块棶鍐呯綉鐨勬祴璇曟満" 
+  dnatrule id 25 from "Any" to "113.208.138.107" service "Any" trans-to "20.20.20.2" log 
+  dnatrule id 26 from "Any" to "36.110.112.103/32" service "https[443]" trans-to "172.16.2.133" port 443 description "鍙嬩俊绠＄悊-寮犵画鑰€" 
+  dnatrule id 1 from "Any" to "36.110.112.103/32" service "2181" trans-to "172.16.3.99/32" port 2181 description "寮犵画鑰€" 
+  dnatrule id 27 from "Any" to "36.110.112.103/32" service "21121" trans-to "172.16.3.121/32" port 2181 
+  dnatrule id 28 from "Any" to "36.110.112.103/32" service "23106" trans-to "172.16.3.106/32" port 23880 
+  dnatrule id 29 from "Any" to "36.110.112.103/32" service "23107" trans-to "172.16.3.107/32" port 23880 
+ --More--              dnatrule id 30 from "Any" to "36.110.112.103/32" service "23119" trans-to "172.16.3.119/32" port 23880 
+  dnatrule id 31 from "Any" to "36.110.112.103/32" service "23120" trans-to "172.16.3.120/32" port 23880 
+  dnatrule id 32 from "Any" to "36.110.112.103/32" service "23121" trans-to "172.16.3.121/32" port 23880 
+  dnatrule id 33 from "Any" to "36.110.112.103/32" service "23122" trans-to "172.16.3.122/32" port 23880 
+  dnatrule id 34 from "Any" to "36.110.112.104/32" service "https[443]" trans-to "10.10.26.249/32" port 443 description "瀹㈡湇寰俊_鍒樺嘲" 
+  dnatrule id 35 from "Any" to "36.110.112.103/32" service "23108" trans-to "172.16.3.108/32" port 23880 
+  dnatrule id 36 from "Any" to "36.110.112.103/32" service "23109" trans-to "172.16.3.109/32" port 24880 
+  dnatrule id 37 from "Any" to "36.110.112.105/32" service "Any" trans-to "172.16.1.42/32" 
+  dnatrule id 3 from "Any" to "36.110.112.103/32" service "8888" trans-to "172.16.3.172/32" port 80 
+  dnatrule id 38 from "Any" to "36.110.112.103/32" service "10981" trans-to "172.16.3.109/32" port 8481 
+  dnatrule id 39 from "Any" to "36.110.112.103/32" service "10983" trans-to "172.16.3.109/32" port 8483 
+  dnatrule id 40 from "Any" to "36.110.112.103/32" service "10782" trans-to "172.16.3.107/32" port 20882 
+  dnatrule id 41 from "Any" to "36.110.112.103/32" service "10788" trans-to "172.16.3.107/32" port 20888 
+  dnatrule id 42 from "Any" to "36.110.112.103/32" service "12780" trans-to "172.16.3.127/32" port 20880 
+  dnatrule id 43 from "Any" to "36.110.112.103/32" service "24109" trans-to "172.16.3.109/32" port 24881 
+  dnatrule id 44 from "Any" to "36.110.112.103/32" service "26131" trans-to "172.16.3.164/32" port 26131 
+  dnatrule id 45 from "Any" to "36.110.112.104/32" service "8585" trans-to "172.16.3.107/32" port 8585 
+  dnatrule id 46 from "Any" to "36.110.112.104/32" service "8686" trans-to "172.16.3.166/32" port 8686 
+  dnatrule id 47 from "Any" to "36.110.112.104/32" service "28131" trans-to "172.16.3.164/32" port 28131 
+  dnatrule id 48 from "Any" to "36.110.112.104/32" service "3389" trans-to "172.16.1.72/32" port 3389 
+  dnatrule id 49 from "Any" to "36.110.112.103/32" service "8080" trans-to "172.16.1.74/32" port 8080 description "椴嶆槑绀肩敵璇凤紝2016.12.9-2017.1.31" 
+  dnatrule id 50 from "Any" to "36.110.112.104/32" service "8080" trans-to "172.16.1.91/32" port 8080 description "寰愪匠鏅?016.12.12鐢宠" 
+  dnatrule id 51 from "Any" to "36.110.112.104/32" service "8443" trans-to "172.16.1.91/32" port 8443 description "寰愪匠鏅?016.12.12鐢宠" 
+  dnatrule id 52 from "Any" to "36.110.112.106" service "Any" trans-to "10.10.8.2" description "鍙嬩俊_server" 
+  dnatrule id 53 from "Any" to "36.110.112.99/32" service "8000" trans-to "172.16.1.123/32" port 80 description "寮犵画鑰€20161228鐢宠,娴嬭瘯3涓湀" 
+  dnatrule id 54 from "Any" to "36.110.112.99/32" service "8080" trans-to "172.16.1.74/32" port 8080 
+  dnatrule id 2 from "Any" to "113.208.138.109" trans-to "172.16.4.3" description "20170313_寮犵画鑰€_娴嬭瘯鐜" 
+  dnatrule id 57 from "Any" to "36.110.112.108/32" service "TCP_10000" trans-to "172.16.1.91/32" port 10000 description "20170322_LiuChuanQi" 
+  dnatrule id 58 from "Any" to "36.110.112.108/32" service "TCP_20000" trans-to "172.16.1.91/32" port 20000 description "20170322_LiuChuanQi" 
+  dnatrule id 59 from "Any" to "36.110.112.99" service "TCP_10080" trans-to "172.16.3.195" port 10080 description "20170327_AnNingYu" 
+  dnatrule id 60 from "Any" to "36.110.112.99" service "TCP_20080" trans-to "172.16.3.195" port 20080 description "20170327_AnNingYu" 
+  dnatrule id 61 from "Any" to "36.110.112.99" service "TCP_8080" trans-to "172.16.3.195" port 80 description "20170327_AnNingYu" 
+  dnatrule id 62 from "Any" to "36.110.68.146" service "TCP_8080" trans-to "172.16.2.152" port 8080 description "20170407" 
+  ip route 0.0.0.0/0 113.208.138.105
+  ip route 10.10.0.0/20 1.0.0.2
+  ip route 10.20.0.0/23 1.0.0.2
+  ip route 10.20.8.0/24 1.0.0.2
+  ip route 20.20.20.0/24 1.0.0.2
+  ip route 172.16.0.0/16 1.0.0.2
+  ip route 61.148.68.166/32 113.208.138.105
+  ip route 115.182.210.132/32 113.208.138.105
+ --More--              ip route 218.205.187.58/32 113.208.138.105
+  ip route 10.255.0.0/18 tunnel2
+  ip route 114.113.126.98/32 36.110.112.97
+  ip route source 10.20.0.0/23 113.208.138.105 description "wifi_5g"
+  ip route source 10.10.0.100/32 36.110.112.97
+  ip route source 10.20.0.17/32 113.208.138.105
+  ip route 10.255.64.0/18 tunnel4
+  ip route 10.255.63.0/24 tunnel4
+  ip route source 10.20.0.244/32 36.110.112.97
+  ip route 0.0.0.0/0 36.110.112.97 weight 4
+  ip route 10.50.3.0/24 tunnel10
+  ip route 10.20.20.0/22 tunnel10
+  ip route 10.10.24.0/21 tunnel21
+  ip route 10.50.2.0/24 tunnel21
+  ip route 10.20.10.0/24 1.0.0.2
+  ip route 10.20.11.0/24 1.0.0.2
+  ip route source 10.20.10.0/24 113.208.138.105
+exit
+pbr-policy "ipsec" vrouter "trust-vr"
+  match id 66
+    disable
+    src-addr "Any"
+    dst-addr "浼樺寲鍦板潃"
+    service "Any"
+    nexthop 36.110.112.97
+  exit
+  match id 1
+    src-ip 10.10.0.0/21
+    dst-ip 10.255.0.0/18
+    service "Any"
+    nexthop tunnel4
+  exit
+  match id 2
+    disable
+    src-ip 10.20.0.0/23
+    src-ip 20.20.20.0/24
+    src-ip 172.16.0.0/21
+    dst-ip 10.10.24.0/21
+    service "Any"
+    nexthop tunnel21
+  exit
+ --More--              match id 3
+    disable
+    src-ip 20.20.20.0/24
+    dst-ip 10.10.24.0/21
+    service "Any"
+    nexthop tunnel21
+  exit
+  match id 36
+    src-addr "10.20.0.0_mask20"
+    src-ip 10.50.1.0/24
+    src-ip 10.10.0.100/32
+    dst-addr "10.20.20.0_mask22"
+    dst-ip 10.50.3.0/24
+    service "Any"
+    nexthop tunnel10
+  exit
+  match id 33
+    src-ip 10.10.3.14/32
+    src-ip 10.20.0.0/23
+    dst-ip 10.20.22.0/24
+    dst-ip 10.20.21.0/24
+    dst-ip 10.20.20.0/24
+    service "Any"
+    nexthop tunnel10
+  exit
+  match id 34
+    src-ip 10.10.3.14/32
+    src-ip 10.20.0.0/23
+    dst-ip 10.10.8.1/29
+    dst-ip 10.10.0.0/21
+    dst-ip 172.16.0.0/22
+    dst-ip 20.20.20.0/24
+    service "Any"
+    nexthop 1.0.0.2
+  exit
+  match id 68
+    src-ip 10.50.1.0/24
+    src-ip 10.20.0.1/23
+    src-ip 10.10.0.100/32
+    dst-ip 10.50.2.0/24
+    dst-ip 10.10.24.0/21
+ --More--                service "Any"
+    nexthop tunnel21
+  exit
+  match id 69
+    src-ip 10.10.3.14/32
+    dst-range 10.10.24.0 10.10.31.254
+    service "Any"
+    nexthop tunnel21
+  exit
+  match id 67
+    src-ip 10.10.3.14/32
+    dst-ip 10.255.63.0/24
+    dst-ip 10.255.64.0/18
+    service "Any"
+    nexthop tunnel4
+  exit
+  match id 4
+    src-ip 20.20.20.0/24
+    src-ip 172.16.0.1/22
+    dst-ip 10.20.22.0/24
+    dst-ip 10.20.21.0/24
+    dst-ip 10.20.20.0/24
+    service "Any"
+    nexthop tunnel10
+  exit
+  match id 5
+    description "YX_server-client - IDC"
+    src-ip 10.20.11.0/24
+    dst-ip 10.20.20.0/23
+    service "Any"
+    nexthop tunnel10
+  exit
+exit
+qos-engine first
+  root-pipe "single" id 146d01f5d56ef174
+    qos-mode "police"
+    pipe-map
+      dst-addr "Any"
+      src-ip 10.10.2.123/32
+    exit
+    pipe-rule forward bandwidth Mbps 170 per-ip-min Kbps 32 per-ip-max Mbps 10 per-ip-using "src-ip" priority 6 
+ --More--                pipe-rule backward bandwidth Mbps 170 per-ip-min Kbps 32 per-ip-max Mbps 10 per-ip-using "src-ip" priority 6 
+  exit
+  root-pipe "绉戞妧鍥姙鍏尯闄愰€? id 145cbb92b6cd145e
+    qos-mode "police"
+    pipe-map
+      dst-addr "Any"
+      src-ip 10.10.10.0/24
+      src-ip 10.20.8.0/24
+      src-ip 10.20.2.0/24
+      src-range 10.10.1.0 10.10.5.254
+    exit
+    exception-map
+      dst-addr "Any"
+      src-ip 10.10.3.14/32
+    exit
+    exception-map
+      dst-addr "Any"
+      src-ip 10.10.3.40/32
+    exit
+    pipe-rule forward bandwidth Mbps 170 per-ip-min Kbps 32 per-ip-max Mbps 20 per-ip-using "src-ip" priority 7 
+    pipe-rule backward bandwidth Mbps 170 per-ip-min Kbps 32 per-ip-max Mbps 20 per-ip-using "src-ip" priority 7 
+  exit
+  root-pipe "default" id 1
+    disable
+  exit
+exit
+qos-engine second
+  root-pipe "eth0/2_36.110.112.98" id 147248c61e3a1432
+    disable
+    pipe-map
+      dst-zone "untrust"
+      egress-if "ethernet0/2"
+      dst-addr "Any"
+      service "Any"
+    exit
+    pipe-rule forward bandwidth Mbps 100 priority 7 
+    pipe-rule backward bandwidth Mbps 100 priority 7 
+    pipe "20Mb甯﹀" id 14724c31f01f5d63
+      pipe-map
+        src-zone "trust"
+        dst-zone "untrust"
+ --More--                    egress-if "ethernet0/2"
+        src-addr "172.16.0.0/21"
+        dst-addr "Any"
+		  service "Any"
+      exit
+      pipe-rule forward reserve-bandwidth Mbps 20 max Mbps 100 priority 7 
+      pipe-rule backward reserve-bandwidth Mbps 20 max Mbps 100 priority 7 
+    exit
+    pipe "80Mb甯﹀" id 14724c55b408e91d
+      pipe-map
+        src-zone "trust"
+        dst-zone "untrust"
+        egress-if "ethernet0/2"
+        dst-addr "Any"
+        src-ip 10.20.2.0/24
+        src-ip 10.20.0.0/23
+        src-ip 10.20.8.0/24
+        src-ip 20.20.20.0/24
+        src-range 10.10.1.0 10.10.7.254
+		  service "Any"
+      exit
+      pipe-rule forward min Kbps 32 max Mbps 80 priority 7 
+      pipe-rule backward min Kbps 32 max Mbps 80 priority 7 
+    exit
+  exit
+  root-pipe "default" id 2
+  exit
+exit
+ntp enable
+ntp max-adjustment 20
+ntp server cn.pool.ntp.org
+clock zone china
+ip domain retry 1
+ip domain timeout 1
+ip dns-proxy ttl 30
+ip name-server 10.10.0.100 vrouter trust-vr
+ip host www.youtube.com 1.1.1.1 vrouter trust-vr
+rule id 8066
+  dst-zone "untrust"
+  src-addr "Any"
+  src-ip 10.10.3.50/32
+ --More--              src-ip 10.10.3.14/32
+  dst-addr "Any"
+  service "Any"
+  url "youtube.com"
+exit
+rule id 27
+exit
+rule id 23
+  action deny
+  src-zone "VPNHub"
+  dst-zone "trust"
+  src-ip 10.20.22.19/32
+  dst-ip 10.20.10.3/32
+  service "Any"
+  name "20170228_10.20.22.19_To_10.20.10.3_Deny"
+exit
+rule id 40
+  action permit
+  src-zone "VPNHub"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-addr "Any"
+  service "Any"
+exit
+rule id 2
+  action permit
+  src-zone "VPNHub"
+  dst-zone "VPNHub"
+  src-addr "Any"
+  dst-addr "Any"
+  service "Any"
+exit
+rule id 39
+  action permit
+  src-zone "trust"
+  dst-zone "VPNHub"
+  src-addr "Any"
+  dst-addr "Any"
+  service "Any"
+exit
+rule id 16
+ --More--              action permit
+  src-zone "trust"
+  dst-zone "untrust"
+  src-ip 10.20.10.0/24
+  dst-ip 211.155.80.61/32
+  dst-ip 114.113.126.98/32
+  service "Any"
+  name "鍙嬩俊_server_permit"
+exit
+rule id 22
+  action permit
+  src-zone "trust"
+  dst-zone "untrust"
+  src-ip 10.20.10.0/24
+  dst-ip 116.213.205.158/32
+  service "11111"
+exit
+rule id 15
+  action deny
+  src-zone "trust"
+  dst-zone "untrust"
+  src-ip 10.20.10.0/24
+  dst-addr "Any"
+  service "Any"
+  name "鍙嬩俊_server_deny"
+exit
+rule id 46
+  action permit
+  src-zone "trust"
+  dst-zone "untrust"
+  src-addr "Any"
+  dst-addr "Any"
+  service "Any"
+exit
+rule id 45
+  action permit
+  src-zone "trust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-addr "Any"
+  service "Any"
+ --More--            exit
+rule id 28
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-addr "172.16.3.195/32"
+  service "TCP_8080"
+  service "TCP_10080"
+  service "TCP_20080"
+exit
+rule id 24
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-ip 111.204.113.197/32
+  src-ip 111.204.113.203/32
+  src-ip 124.251.102.94/32
+  dst-ip 36.110.112.108/32
+  service "8443"
+  service "8080"
+  service "TCP_10000"
+  service "TCP_20000"
+  name "20170308_WangSaiPeng_铻?60"
+exit
+rule id 33
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 113.208.138.108/32
+  service "tcp3336"
+exit
+rule id 47
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 113.208.138.108/32
+  service "tcp3333"
+  service "HTTP"
+ --More--              service "22222"
+  service "8000"
+  service "30080"
+exit
+rule id 52
+  action deny
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 113.208.138.108/32
+  service "Any"
+exit
+rule id 49
+  action permit
+  disable
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 113.208.138.109/32
+  service "Any"
+  name "20170313_寮犺€€宄癬娴嬭瘯鐜"
+exit
+rule id 50
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.105/32
+  service "Any"
+exit
+rule id 34
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "permit-3.31"
+  dst-addr "O2O-server-out"
+  service "Any"
+exit
+rule id 35
+  action deny
+  src-zone "untrust"
+ --More--              dst-zone "trust"
+  src-addr "Any"
+  dst-addr "O2O-server-out"
+  service "Any"
+exit
+rule id 36
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-addr "Any"
+  service "ICMP"
+exit
+rule id 37
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-addr "Any"
+  service "udp33433-33523"
+exit
+rule id 38
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-addr "Any"
+  service "SSH"
+exit
+rule id 51
+  action permit
+  disable
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.98/32
+  service "Any"
+  name "test"
+exit
+rule id 53
+  action permit
+ --More--              src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.99/32
+  service "HTTPS"
+  service "8888"
+  service "8000"
+exit
+rule id 54
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.100/32
+  service "HTTPS"
+  service "8888"
+exit
+rule id 41
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.101/32
+  service "IMO_TCP_10000"
+  service "IMO_TCP_1863"
+  service "IMO_TCP_5186"
+  service "IMO_TCP_6000"
+  service "IMO_TCP_7000"
+  service "IMO_TCP_8999"
+  service "IMO_UDP_5186"
+  service "IMO_TCP_8091"
+  service "IMO_TCP_3306"
+  service "IMO_TCP_5722"
+exit
+rule id 48
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 113.208.138.107/32
+  service "Any"
+ --More--            exit
+rule id 42
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.102/32
+  service "8080"
+exit
+rule id 44
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-ip 61.148.68.166/32
+  src-ip 115.182.210.132/32
+  dst-ip 36.110.112.103/32
+  service "https[443]"
+exit
+rule id 65
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "RRD鐧藉悕鍗昣36.110.112.103"
+  dst-ip 36.110.112.103/32
+  service "2181"
+exit
+rule id 66
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "RRD鐧藉悕鍗昣36.110.112.103"
+  dst-ip 36.110.112.103/32
+  service "21121"
+  service "23106"
+  service "23107"
+  service "23119"
+  service "23120"
+  service "23121"
+  service "23122"
+exit
+rule id 67
+ --More--              action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.104/32
+  service "https[443]"
+exit
+rule id 68
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "RRD鐧藉悕鍗昣36.110.112.103"
+  dst-ip 36.110.112.103/32
+  service "23108"
+  service "23109"
+exit
+rule id 4
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "RRD鐧藉悕鍗昣36.110.112.103"
+  dst-ip 36.110.112.103/32
+  service "10981"
+  service "10983"
+exit
+rule id 5
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "RRD鐧藉悕鍗昣36.110.112.103"
+  dst-ip 36.110.112.103/32
+  service "10782"
+  service "10788"
+exit
+rule id 6
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "RRD鐧藉悕鍗昣36.110.112.103"
+  dst-ip 36.110.112.103/32
+  service "12780"
+ --More--              service "24109"
+exit
+rule id 7
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "姘戠敓_36.110.112.103"
+  dst-ip 36.110.112.103/32
+  service "8888"
+exit
+rule id 8
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "姘戠敓_36.110.112.103"
+  dst-ip 36.110.112.103/32
+  service "26131"
+exit
+rule id 9
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-ip 123.59.44.158/32
+  dst-ip 36.110.112.104/32
+  service "8585"
+  service "8686"
+exit
+rule id 10
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-ip 116.228.139.24/30
+  src-ip 116.213.214.0/24
+  src-ip 101.95.157.134/32
+  src-ip 124.74.105.54/32
+  dst-ip 36.110.112.104/32
+  service "28131"
+exit
+rule id 11
+  action permit
+  src-zone "untrust"
+ --More--              dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.104/32
+  service "3389"
+exit
+rule id 13
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-addr "Any"
+  dst-ip 36.110.112.103/32
+  service "8080"
+exit
+rule id 14
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-ip 61.148.68.166/32
+  dst-ip 36.110.112.104/32
+  service "8080"
+  service "8443"
+exit
+rule id 12
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-ip 180.169.69.34/32
+  src-ip 180.169.69.46/32
+  dst-ip 36.110.112.99/32
+  service "8080"
+exit
+rule id 21
+  action deny
+  src-zone "Any"
+  dst-zone "trust"
+  dst-ip 36.110.112.99/32
+  service "8080"
+exit
+rule id 1
+  action deny
+  src-zone "Any"
+ --More--              dst-zone "Any"
+  src-addr "Any"
+  dst-addr "Any"
+  service "Any"
+exit
+rule id 29
+exit
+rule id 30
+  action permit
+  src-zone "untrust"
+  dst-zone "trust"
+  src-ip 180.169.69.46/32
+  src-ip 180.169.69.34/32
+  dst-ip 36.110.146.146/32
+  service "TCP_8080"
+exit
+l2-nonip-action drop
+no alg msrpc
+no alg q931
+no tcp-mss all
+tcp-mss tunnel 1380
+snmp-server manager
+snmp-server port 161
+snmp-server engineID "1"
+snmp-server host 10.10.3.14 version 1 community hi3HVPY5scXzazHirDp1a3Sw3FEy ro
+snmp-server host 10.10.0.104 version 1 community 68mFH/N71WdtWaqmh0d0tRlJXP8s ro
+ecmp-route-select by-src-and-dst
+tech-support-email on vrouter "trust-vr"
+  url-db-query server1 "url1.hillstonenet.com" port 8866 vrouter trust-vr
+  url-db-query server1 enable
+  url-db-query server2 "url2.hillstonenet.com" port 8866 vrouter trust-vr
+  url-db-query server2 enable
+url-db-https-enable
+flow
+exit
+app cache dns-redirect enable
+strict-tunnel-check
+statistics-set "predef_if_bw"
+  target-data bandwidth id 0 record-history
+  group-by interface directional
+exit
+ --More--            statistics-set "predef_user_bw"
+  target-data bandwidth id 1 record-history
+  group-by user directional
+exit
+statistics-set "predef_app_bw"
+  target-data bandwidth id 2 record-history
+  group-by application
+exit
+statistics-set "predef_user_app_bw"
+  target-data bandwidth id 3
+  group-by user directional interface zone application
+exit
+statistics-set "predef_zone_if_app_bw"
+  target-data bandwidth id 4
+  group-by interface zone directional application
+exit
+query-groups
+  dashboard-query-group "hillstone-1458708630966-dashboard-query-group" user "hillstone"
+    rule "customwidget" create-time 1464798164 id 2 query-string "flag_6,9,4,5,10"
+  exit
+  dashboard-query-group "guowd-1468568003988-dashboard-query-group" user "guowd"
+    rule "customwidget" create-time 1472843793 id 1 query-string "flag_6,9,4,5,10"
+  exit
+  dashboard-query-group "lushuo-1476257502766-dashboard-query-group" user "lushuo"
+    rule "customwidget" create-time 1476793607 id 3 query-string "flag_4,5,6,9,10"
+  exit
+exit
+lan-addr private_network
+monitor-address address monitor_address
+
+End
+鏄QHBUFWC0-19F#        
